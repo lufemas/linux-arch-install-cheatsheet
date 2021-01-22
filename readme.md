@@ -376,7 +376,7 @@ Once installed, you can enable to start each time you reboot your system.
 
 ```systemctl enable lxdm.service```
 
-Enable fonts as well, example here:
+Enable fonts as well, example here`:
 
 ```sudo pacman -Syu ttf-dejavu``` 
 
@@ -404,5 +404,29 @@ Enable fonts as well, example here:
 
 
 
+# Some useful programs to install
+
+**Arch Repo**
+-   ARandr *GUI for Display Config*
+-   pcmanfl *File Manager*
+-   sxiv  *Image Viewer*
+-   zathura *Document reader*
+-   xf86-input-synaptics *Most laptops touchpad*
+-   xterm *x terminal*
+
+
+**AUR** 
+first install base-devel and git:
+
+```
+pacman -S --needed git base-devel 
+git clone https://aur.archlinux.org/yay.git 
+cd yay makepkg -si
+```
+
+-   zathura-pdf-poppler *plugin for Zathura open pdf*
+-   st *suckless terminal*
+
 
  - References: https://gist.github.com/dhhdev/a8cc055ce7ba04a85528, https://wiki.archlinux.org, https://www.itzgeek.com/how-tos/linux/arch-linux/install-arch-linux-2021.html
+`
