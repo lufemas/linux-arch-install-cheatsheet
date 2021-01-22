@@ -273,6 +273,8 @@ Connect to a wifi network:
 
 ```$ nmcli device wifi connect SSID_or_BSSID password password```
 
+example: `nmcli device wifi connect MY_OFFICE_WIFI password 123SECRETWIFIPASSWORD`
+
 Connect to a hidden network:
 
 ```$ nmcli device wifi connect SSID_or_BSSID password password hidden yes```
@@ -362,26 +364,30 @@ sudo pacman -Syu
 
 Before installing a desktop environment (DE), you will need to install the X server which is the most popular display server.
 
-sudo pacman -S xorg
+```sudo pacman -S xorg```
 
 Once it’s completed, use any of the below commands to install your favorite desktop environment.
 
 You will also need a display manager to log in to your desktop environment. For the ease, you can install LXDM.
 
-pacman -S lxdm
+```pacman -S lxdm```
 
 Once installed, you can enable to start each time you reboot your system.
 
-systemctl enable lxdm.service
+```systemctl enable lxdm.service```
+
+Enable fonts as well, example here:
+
+```sudo pacman -Syu ttf-dejavu``` 
 
 * Installing X
     - Choose fastest mirror in /etc/pacman.d/mirrorlist
         + vim /etc/pacman.d/mirrorlist
         + Put the below line at the top:
             Server = http://mirror.nus.edu.sg/archlinux/$repo/os/$arch
-    sudo pacman -S xorg
+    ```sudo pacman -S xorg
     sudo pacman -S xorg-twm xorg-xclock xterm
-    startx
+    startx```
     ##### Take note that: never try to create /etc/xorg.conf file!!! Try to create
           this file will make X not able to start!!!
 
