@@ -185,13 +185,6 @@ Set the `LANG` variable in `/etc/locale.conf` file.
 
 ## Set Timezone
 
-Now, configure the system time zone by creating a symlink of your timezone to the /etc/localtime file.
-
-```# ln -sf /usr/share/zoneinfo/Zone/SubZone /etc/localtime```
-Also, set the hardware clock to UTC.
-
-```hwclock --systohc --utc```
-
 ### Arch Wiki Copy and Paste:
 - To check the current zone defined for the system:
 
@@ -215,6 +208,13 @@ This will create an /etc/localtime symlink that points to a zoneinfo file under 
 In case you choose to create the link manually (for example during chroot where timedatectl will not work), keep in mind that it must be a symbolic link, as specified in archlinux(7):
 
 ```# ln -sf /usr/share/zoneinfo/Zone/SubZone /etc/localtime```
+
+Now, configure the system time zone by creating a symlink of your timezone to the /etc/localtime file.
+
+```# ln -sf /usr/share/zoneinfo/Zone/SubZone /etc/localtime```
+Also, set the hardware clock to UTC.
+
+```hwclock --systohc --utc```
 
 ## Set Hostname
 
@@ -243,7 +243,7 @@ Arch Linux requires a boot loader to boot the system. You can install the grub b
 
     pacman -S grub efibootmgr
 
-    grub-install --efi--directory=/efi
+    grub-install --efi-directory=/efi
 
     grub-mkconfig -o /boot/grub/grub.cfg
 
